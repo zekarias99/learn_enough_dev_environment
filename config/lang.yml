@@ -1,14 +1,14 @@
 ---
 chapter:
-  word: Chapter
+  word: ምዕራፍ
   order: standard     # Use 'reverse' to change 'Chapter 1' to '1 Chapter'
-section: Section
-table: Table
-figure: Figure
-fig: Fig
-aside: Box
-listing: Listing
+section: ክፍል
+table: ሰንጠረዥ
+figure: ምስል
+fig: ምስል
+aside: ሳጥን
+listing: ዝርዝር
 equation: Equation
 eq: Eq
-frontmatter: Frontmatter
-contents: Contents
+frontmatter: ማውጫ
+contents: ይዘቶች
