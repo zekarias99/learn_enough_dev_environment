@@ -1,53 +1,57 @@
 %= <span class="free"></span>
 
-\noindent One of the most important tasks for any aspiring developer---or any technical person generally---is setting up their computer as a \emph{development environment}, making it suitable for developing websites, web applications, and other software. \ledev\ is designed to complement the \href{http://www.learnenough.com/tutorials}{main Learn Enough sequence} and the \rort\ by putting all of the relevant material in one place.
+\noindent ለማንኛውም ፍላጎት ላለው ገንቢ (ወይም በአጠቃላይ ቴክኒካዊ ለሆነ ሰው) በጣም አስፈላጊ ከሆኑት ተግባራት መካከል አንዱ ኮምፒዩተራቸውን ልክ እንደ አንድ \emph{የማበልጸጊያ አካባቢ} በማቀናበር የድር ጣቢያዎችን፣ የድር አፕልኬሽኖችን እና ሌሎች ሶፍትዌሮችን ለማበልጸግ ተስማሚ እንዲሆን ማድረግ ነው፡፡ \ledev\ ፣ ሁሉንም አስፈላጊ ቁሳቁሶች በአንድ ቦታ ላይ በማስቀመጥ \href{http://www.learnenough.com/tutorials}{ዋናውን የበቂ ይማሩ ተከታታይ የስልጠና ትምህርትን} እና የ\rort\/ን ለማሟላት የተቀየሰ ነው፡፡
 
-This tutorial covers several options for setting up a dev environment, aimed at readers of varying levels of experience and sophistication. If you end up using the option shown in Section~\ref{sec:cloud_ide}, there is no minimum prerequisite for this tutorial other than general computer knowledge. If you want to follow the more challenging setup in Section~\ref{sec:native_os_setup}---which we recommend most readers tackle at some point---you should have a basic familiarity with the Unix command line (as covered in \lecl), and a familiarity with text editors and system configuration (as covered in \lete) is recommended.
+ይህ የስልጠና ትምህርት የተለያየ ደረጃ ልምድ ላላቸው እና የተካኑ አንባቢያን ላይ ኢላማ ያደረገ፣ አንድ የማበልጸጊያ አከባቢን ለማዘጋጀት የተላያዩ አማራጮችን ይሸፍናል፡፡ በክፍል~\ref{sec:cloud_ide} ውስጥ የሚታየውን አማራጪ ለመጠቀም ከወሰናችሁ፣ አጠቃላይ የሆነ የኮምፒዩተር ዕውቀት ከመኖር በስተቀር፣ ይህንን የስልጠና ትምህርት ለማጠናቀቅ የሚያስፈልግ ምንም አይነት ቅድመ ዝግጅት አያስፈልጋችሁም፡፡ በክፍል~\ref{sec:native_os_setup} ውስጥ ያለውን በጣም ፈታኝ የሆነውን ማዋቀር ተግባራዊ ለማድረግ ከፈለጋችሁ (ይህንንም አብዛኛዎቹ አንባቢያን አንድ ወቅት ላይ እንዲሞክሩት ምክሬን እለግሳለሁ)፣ (\lecl ላይ እንደተሸፈነው) ከዩኒክስ የትእዛዝ መስመር ጋር አንድ መሰረታዊ የሆነ ትውውቅ ሊኖራችሁ ይገባል፤ እንዲሁም (\lete ላይ እንደተሸፈነው) ከአንድ የጽሑፍ አርታኢ እና አንድ ስርዓትን ከማዋቀር ጋር ትውውቅ ሊኖራችሁ እንደሚገባ ይመከራል፡፡
 
-Ebook versions of this tutorial are available for \href{https://www.softcover.io/email-capture/28fdb94f/learn_enough_dev_environment}{free at learnenough.com} and for \href{https://www.amazon.com/Learn-Enough-Dev-Environment-Dangerous-ebook/dp/B01MTEQJ6E}{99¢ at Amazon.com}.
+የዚህ የስልጠና ትምህርት የኢ-መጽሐፍ ስሪቶች \href{https://www.softcover.io/email-capture/28fdb94f/learn_enough_dev_environment}{በበቂ ይማሩ} ላይ በነጻ ሲገኙ፣ \href{https://www.amazon.com/Learn-Enough-Dev-Environment-Dangerous-ebook/dp/B01MTEQJ6E}{በአማዞን ላይ ደግሞ በ99 ሳንቲም} ይገኛሉ።
 
-\section{Dev environment options} % (fold)
+\section{የማበልጸጊያ አከባቢ አማራጮች} % (fold)
 \label{sec:dev_environment_options}
 
-Our focus in this tutorial is on installing or otherwise enabling the following four fundamental tools of software development (Figure~\ref{fig:dev_environment}):
+በዚህ የስልጠና ትምህርት ውስጥ የምናተኩረው፣ የሚከተሉትን አራት መሰረታዊ የሶፍትዌር ማበልጸጊያ መሳሪያዎችን በመጫን ወይም በማንቃት ላይ ይሆናል (ምስል~\ref{fig:dev_environment}):-
+
 \begin{enumerate}
-  \item Command line terminal (``shell'')
-  \item Text editor
-  \item Version control (Git)
-  \item Programming languages (Ruby, etc.)
+  \item የትእዛዝ መስመር መናኸሪያ (``ቀፎ'')
+  \item የጽሑፍ አርታዒ
+  \item የስሪት መቆጣጠሪያ (ጊት)
+  \item የፕሮግራም ቋንቋዎች (ሩቢ፣ ወዘተረፈ)
 \end{enumerate}
-For more information on these different types of software application, see \lecl, \lete, \leg, and \ler.
+
+እነዚህ የተለያዩ የሶፍትዌር አይነቶች ላይ የበለጠ መረጃን ለማግኘት ከፈለጋችሁ \lecl\/፣ \lete\/፣ \leg እና \ler ላይ ተመልከቱ።
 
 \begin{figure}
 \begin{center}
 \image{images/figures/dev_environment.png}
 \end{center}
-\caption{Typical elements of a dev environment.\label{fig:dev_environment}}
+\caption{የአንድ የማበልጸጊያ አካባቢ የተለመዱ ገጸባህርያት።\label{fig:dev_environment}}
 \end{figure}
 
-When setting up a development environment, there are two main possibilities we recommend, listed in increasing order of difficulty:
+አንድ የማበልጸጊያ አካባቢን በማቀናበር ጊዜ፣ ሁለት የምንመክራቸው ዋና አማራጪ መንገዶች አሉ፤ እነሱም አስቸጋሪነታቸው እየጨመረ በሚሄድ ቅደም ተከተል መሰረት ተዘርዝሯል:-
 
 \begin{enumerate}
-  \item Cloud \href{https://en.wikipedia.org/wiki/Integrated_development_environment}{IDE}
-  \item Native OS (macOS, Linux, Windows)
+  \item የደመና \href{https://en.wikipedia.org/wiki/Integrated_development_environment}{ቅ.ማ.አ (IDE)}
+  \item የቤተኛ ስርዓተ ክወና ማዋቀር (Native OS) (ማክ ስ.ክ፣ ሊኒክስ፣ ዊንዶውስ)
 \end{enumerate}
 
-If you're relatively inexperienced, we recommend starting with the cloud IDE (Section~\ref{sec:cloud_ide}), as it has the least difficult setup process.
+ስለዚህ ሁኔታ ልምድ የሌላችሁ ከሆነ፣ የደመና ቅ.ማ.አው ከሌሎቹ የቀለለ የማዋቀር ሂደት ስላለው፣ በሱ እንድትጀምሩ እንመክራለን (ክፍል~\ref{sec:cloud_ide})።
 
-\subsubsection{Native system} % (fold)
+\subsubsection{ቤተኛ ስርዓት} % (fold)
 \label{sec:native_system}
 
-While the IDE option is great when you're just getting started, eventually it's important to be able to develop software on your native operating system (OS)\@. Unfortunately, setting up a fully functional native development environment can be a challenging and frustrating process\footnote{This is why it's such a bad idea to include a native dev setup at the beginning of a book like the \rortb. It's better to get started with the core material first, and tackle the native dev environment setup later. The switch over to a cloud IDE in the third edition of the \rortb\ was motivated by this realization.}---likely leaving ample opportunity to exercise your technical sophistication (Box~\ref{aside:technical_sophistication})---but it is an essential rite of passage for every aspiring technical wizard.
+አንድ አፕልኬሽንን ለማበልጸግ ሲጀምሩ የደመና ቅ.ማ.አ አማራጩን መጠቀሙ በጣም ጥሩ ቢሆንም፣
+መጨረሻ ላይ ግን በቤተኛ ስርዓተ ክወናችሁ ላይ ሶፍትዌሮችን ማበልጸግ መቻሉ በጣም አስፈላጊ ነው።
+አለመታደል ሆኖ፣ አንድ ሙሉ በሙሉ ተግባራዊ የሆነ ቤተኛ የማበልጸጊያ አካባቢን ማዋቀሩ አንድ ፈታኝ እና ተስፋ የሚያስቆርጥ ሂደት ሊሆን ይችላል\footnote{ለዚህም ነው ልክ እንደ \rortb ለመሳሰሉ መጽሐፍት መጀመሪያ ላይ አንድ የቤተኛ ማበልጸጊያ ዝግጅትን ማካተቱ መጥፎ ሀሳብ የሆነው፡፡ መጀመሪያ በዋናው ቁሳቁስ/ይዞታ መጀመር እና በኋላ ላይ ደግሞ የቤተኛ ማበልጸጊያ መዋቅሩ ጋር መፋለሙ የተሻለ ነው። የሶስተኛው የ\rortb\ እትምን በአንድ የደመና ቅ.ማ.አ ላይ ለማበልጸግ የተወሰነበት ምክንያትም ይህንን ግንዛቤ እግምት ውስጥ በማስገባት ነበር።} (ቴክኒካዊ ብልሃታችሁን የመጠቀም ሰፊ ዕድልን ዘንግታችሁ ይሆናል (ሳጥን~\ref{aside:technical_sophistication}))፤ እሱ ግን ለማንኛውም ፍላጎት ላለው የቴክኒክ ባለሙያ አንድ አስፈላጊ የመተላለፊያ ስነ-ስርዓት ነው፡፡
 
-In order to tackle this difficult challenge, in Section~\ref{sec:native_os_setup} we'll discuss native OS setup for macOS, Linux, and Windows.
+ይህንን አስቸጋሪ ፈተና ለመቋቋም፣ በክፍል~\ref{sec:native_os_setup} ውስጥ ለማክክ.ስ (macOS)፣ ለሊኒክስ እና ለዊንዶውስ የቤተኛ ስርዓተ ክወናን እንዴት አድርገን እንደምናቀናብር እንመለከታለን፡፡
 
 \begin{aside}
 \label{aside:technical_sophistication}
-\heading{Technical sophistication.}
+\heading{ቴክኒካዊ ብልሃት}
 
-\emph{Technical sophistication} is the ability to independently solve technical problems. In the context of installing a development environment, this means knowing to google the error message if something goes wrong, to try quitting and restarting an application (such as the command-line shell) to see if that fixes things, etc.
+\emph{ቴክኒካዊ ብልሃት} ማለት ቴክኒካዊ የሆኑ ችግሮችን በግል የመፍታት ችሎታ ማለት ነው። አንድ የማበልጸጊያ አካባቢን በመጫን አውድ ውስጥ፣ ይህ ማለት አንድ ነገር ከተበላሸ የስህተት መልዕክቱን መጎገሉን ማወቅ፣ አፕልኬሽኑን ማቆም እና አንድ አፕልኬሽንን (ማለት እንደ የመስመር ትእዛዝ ቀፎ ያሉትን አፕልኬሽኖችን) እንደገና ማስጀመር እና እንደዛ ማድረጉ ነገሮችን ያስተካከለ መሆኑን ማየትን ያካትታል።
 
-So many things can go wrong when setting up a development environment that there's rarely a general solution to the problem---you just have to keep applying your technical sophistication until you get everything to work. And if you do get stuck, don't worry too much about it---at some point or another, it happens to us all.
+ብዙውን ጊዜ ለችግሩ አጠቃላይ የሆነ አንድ መፍትሔ ስለማይገኝ፣ አንድ የማበልጸጊያ አካባቢን በማቀናበር ወቅት ብዙ ነገሮች ወዳልተጠበቀ ስህተት ሊያመሩ ይችላሉ። (ሁሉም ነገር እስኪሰራ ድረስ ቴክኒካዊ ብልሃታችሁን መጠቀሙን መቀጠል ይኖብባችኋል፡፡ ችግሩ አልወጣም ካላችሁ ግን ስለሱ ብዙ ልትጨነቁ አይገባም።) ይህ ነገር በሕይወት ዘመናችን ውስጥ በአንድ ወቅት በሁላችንም ላይ ተከስቷል ወይም ሊከሰት ይችላል።
 
 \end{aside}
 
@@ -55,84 +59,84 @@ So many things can go wrong when setting up a development environment that there
 
 % section dev_environment_options (end)
 
-\section{Cloud IDE}
+\section{የደመና ቅ.ማ.አ}
 \label{sec:cloud_ide}
 
-The easiest dev environment option is a \emph{cloud IDE}, which is an integrated development environment in the \href{https://en.wikipedia.org/wiki/Cloud_computing}{cloud} that you access using the web browser of your choice. Although easy to activate, the resulting system is an industrial-grade development machine, not a toy. In addition, the cloud IDE automatically works cross-platform, since all you need is an ordinary web browser to use it (which every major OS provides).
+ካሉት የማበልጸጊያ አካባቢ አማራጮች ሁሉ በጣም ቀላሉ የማበልጸጊያ አካባቢ \emph{የደመና ቅ.ማ.አው (cloud IDE)} ነው፣ ይህም እናንተ የመረጣችሁትን የድር አሳሽ በመጠቀም የምትደርሱበት አንድ \href{https://en.wikipedia.org/wiki/Cloud_computing}{በደመና} ውስጥ የተቀናጀ የማበልጸጊያ አካባቢ ነው። ለማግበር ቀላል ቢሆንም፣ ከዚያ የሚገኘው ስርዓት ግን አንድ የቁም ነገር ደረጃ ያለው የማበልጸጊያ ኮምፕዩተር ነው እንጅ አንድ ተራ መጫወቻ አይደለም። በተጨማሪም፣ እሱን ለመጠቀም የሚያስፈልጋችሁ አንድ ተራ የድር አሳሽ ስለሆነ (ማለት ይህንን ማንኛውም ስርዓተ ክወና ስለሚያቀርበው)፣ የደመና ቅ.ማ.አው በሁሉም ስርዓተ-መሳርያ ላይ በራስሰር ይሰራል።
 
-There are several commercial options for running a cloud IDE, and as part of developing the \rort\ we partnered with \href{http://c9.io/}{Cloud9} (part of Amazon Web Services). The resulting environment is appropriate for Ruby on Rails web development, and as a matter of course includes all the elements mentioned in Section~\ref{sec:dev_environment_options}. In particular, AWS Cloud9 comes equipped with a command-line terminal and a text editor (including a filesystem navigator), as shown in Figure~\ref{fig:ide_anatomy}. Because each Cloud9 workspace provides a full working Linux system, it also automatically includes the Git version control system, as well as Ruby and several other programming languages.
+አንድ የደመና ቅ.ማ.አን ለማስኬድ የሚያገለግሉ በርካታ የንግድ/የሚከፈልባቸው አማራጮች አሉ፣ የ \rort\/ን ለመገንባት የአማዞን የድር አገልግሎቶች አካል ከሆነው \href{http://c9.io/}{ከክላው9}  ጋር ተሻርከናል። ከዚያ የሚገኘው ውጤትም አንድ ለሩቢ ኦንሬይልስ የድር ማበልጸጊያ የሚስማማ አካባቢ ነው፣ በእርግጥ በክፍል~\ref{sec:dev_environment_options} ውስጥ የተጠቀሱትን ሁሉንም ነገሮች ያካትታል፡፡ በተለይም በምስል~\ref{fig:ide_anatomy} ላይ እንደሚታየው፣ የአ.ድ.አ ክላውድ9`ኑ (AWS Cloud9) አንድ የትእዛዝ መስመር መናኸሪያን እና አንድ የጽሑፍ አርታኢን (አንድ የፋይል ስርዓት ዳሳሽን አካቶ) ሰንቆ ይመጣል፡፡ እያንዳንዱ የክላውድ9 የመስሪያ ቦታ አንድ ሙሉ በሙሉ የሚሰራ የሊኒክስ ስርዓትን ስለሚሰጥ፣ የጊት የስሪት ቁጥጥር ስርዓትን፣ እንዲሁም የሩቢን እና የሌሎች በርካታ የፕሮግራም ቋንቋዎችን በራስሰር ያካትታል፡፡
 
 \begin{figure}
 \begin{center}
 \image{images/figures/ide_anatomy_aws.png}
 \end{center}
-\caption{The anatomy of the cloud IDE.\label{fig:ide_anatomy}}
+\caption{የደመና ቅ.ማ.አው ሁለንተናዊ አቀማመጥ።\label{fig:ide_anatomy}}
 \end{figure}
 
-Here are the steps for getting started with the cloud development environment:\footnote{Due to the constantly evolving nature of sites like AWS, details may vary; use your technical sophistication (Box~\ref{aside:technical_sophistication}) to resolve any discrepancies.}
+የደመና የማበልጸጊያ አካባቢን፣ ጥቅም ላይ ለማዋል፣ የሚያስፈልጉት ሂደቶች የሚከተሉት ናቸው:-\footnote{እንደ አ.ድ.አ ያሉ ጣቢያዎች፣ ባላቸው ይሄ ነው የማይባል እድገት ምክንያት፣ በየጊዜው የምታዩዋቸው መረጃወች ሊለያዩ ይችላሉ፣ ማንኛውንም ልዩነት/አለመጣጣም ለማስተካከል ቴክኒካዊ ችሎታችሁን (ሳጥን~\ref{aside:technical_sophistication}) ተጠቀሙ።}
 \begin{enumerate}
-\item Because Cloud9 is part of Amazon Web Services (AWS), if you already have an AWS account you can just \href{https://aws.amazon.com/}{sign in}.\footnote{https://aws.amazon.com/} To create a new Cloud9 workspace environment, go to the \href{https://console.aws.amazon.com/}{AWS console} and type ``Cloud9'' in the search box.
-\item If you don't already have an AWS account, you should \href{https://www.railstutorial.org/cloud9-signup}{sign up for a free account at AWS Cloud9}.\footnote{https://www.railstutorial.org/cloud9-signup} In order to prevent abuse, AWS requires a valid credit card for signup, but the workspace is 100\% free (for a year as of this writing), and your card will not be charged. You might have to wait up to 24 hours for the account to be activated, but in my case it was ready in about ten minutes.
-\item Once you've successfully gotten to the Cloud9 administrative page (Figure~\ref{fig:cloud9_page_aws}), keep clicking on ``Create environment'' until you find yourself on a page that looks like Figure~\ref{fig:cloud9_new_workspace}. Enter the information as shown there, then make sure to choose \textbf{Ubuntu Server} (\emph{not} Amazon Linux) (Figure~\ref{fig:ubuntu_server}). Finally, keep clicking the confirmation buttons until Cloud9 starts provisioning the IDE (Figure~\ref{fig:cloud9_ide_aws}). You may run into a warning message about being a ``root'' user, which you can safely ignore at this early stage. (If you're feeling up to it, you can implement the preferred method, called an Identity and Access Management (IAM) user, at this point. See \href{https://www.railstutorial.org/book/user_microposts#sec-image_upload_in_production}{Chapter 13 in the \href{https://www.railstutorial.org/}{\emph{Ruby on Rails Tutorial}}} for more information.)
-\item Finally, make sure you're running an up-to-date version of Git (Listing~\ref{code:upgrade_git}).
+\item ክላውድ9 የአማዞን የድር አገልግሎቶች አካል ስለሆነ፣ የአማዞን የድር አገልግሎት \emph{መለያ} ካላችሁ በራስሰር ወደዛው \href{https://aws.amazon.com/}{መግባት}\footnote{https://aws.amazon.com/} ትችላላችሁ፡፡ አንድ አዲስ የክላውድ9 የመስሪያ አካባቢ ለመፍጠር፣ \href{https://console.aws.amazon.com/}{አ.ድ.አ ሰሌዳ} ውስጥ በመግባት፣ በመፈለጊያ ሳጥኑ ውስጥ፣ ``Cloud9'' ብላችሁ ጻፉ፡፡
+\item ቀድሞውኑ አንድ የአ.ድ.አ መለያ ከሌላችሁ፣ \href{https://www.railstutorial.org/cloud9-signup}{አንድ የነጻ መለያ ለማግኘት፣ በአ.ድ.አ ክላውድ9 ላይ መመዝገብ} ይኖርባችኋል፡፡ አግባብ የሌለው አጠቃቀምን ለመከላከል፣ አ.ድ.አ በምዝገባ ወቅት አንድ ብቃት ያለው የዱቤ ካርድን ይጠይቃል፤ ነገር ግን የመስሪያ ቦታው፣ (ይህ ጽሑፍ በተጻፈበት ወቅት ለአንድ ዓመት) 100\% ነጻ ነው፤ ስለሆነም ከካርዳችሁ የሚወሰድ ገንዘብ አይኖርም። መለያው እስኪነቃ/እስኪጀምር ድረስ፣ እስከ 24 ሰዓት መጠበቅ ሊኖርባችሁ ይችላል። በእኔ በኩል ግን በአስር ደቂቃ ውስጥ ሁሉ ነገር ዝግጁ ነበረ።
+\item አንዴ ክላውድ9 አስተዳደር ገጽ (ምስል~~\ref{fig:cloud9_page_aws}) ላይ ከገባችሁ በኋላ፣ ልክ ምስል~\ref{fig:cloud9_new_workspace} `ን የሚመስል ገጽን እስክታገኙ ድረስ ``Create environment'' የሚለው ላይ ጠቅ ማድረጋችሁን ቀጥሉ። ምስል~\ref{fig:cloud9_new_workspace} ላይ የሚታየውን መረጃ በቅጹ ላይ ሙሉ፡፡ በሚቀጥለው ገጽ ላይ ከሚገኙት ምርጫወች ውስጥ፣ የ Amazon Linux `ን \emph{ሳይሆን} የ \textbf{Ubuntu Server `ን} (ምስል~\ref{fig:ubuntu_server}) ምረጡ። ከዚያ ``Next step'' የሚለውን ጠቅ አድርጉ፡፡ አ.ድ.አ ቅ.ል.አውን እስከሚያቀርብ ድረስ፣ ነባሪ ቅንብሮችን በእሽታ ለማስተናገድ፣ የማረጋገጫ አዝራሩን ጠቅ አድርጉ (ምስል~\ref{fig:cloud9_ide_aws})፡፡ አንድ የሩት\footnote{ሩት በዩኒክስ እና በመሳሰሉት ስርዓቶች ላይ፣ በሁሉም ትእዛዞች እና ፋይሎች ላይ፣ በተፈጥሮው ስልጣን ያለው የተጠቃሚ ስም ወይም መለያ ነው።} ``root'' ተጠቃሚ በመሆናችሁ ምክንያት፣ አንድ የማስጠንቀቂያ መልእክት ልታገኙ ትችላላችሁ፤ ይህንንም ላሁኑ ችላ ብላችሁ ማለፍ ትችላላችሁ፡፡ (በዚህ ጊዜ የማንነት እና የማስተዳደር ባለስልጣን ተጠቃሚ (IAM) ተብሎ የሚጠራውን ተመራጪ ዘዴ ለመተግበር ፍላጎቱ ካላችሁ እንደዛ ማድረግ ትችላላችሁ። ስለዚህ አተገባበር የበለጠ መረጃ ለማግኘት \href{https://www.railstutorial.org/}{\emph{በሩቢ የስልጠና ትምህርት ላይ}} \href{https://www.railstutorial.org/book/user_microposts#sec-image_upload_in_production}{ምዕራፍ 13ን} ተመልከቱ።)
+\item በመጨረሻም፣ አንድ የዘመነ የጊት ስሪትን እያስኬዳችሁ መሆኑን አረጋግጡ (ዝርዝር~\ref{code:upgrade_git})።
 \end{enumerate}
 
 \begin{figure}
 \begin{center}
 \image{images/figures/cloud9_page_aws.png}
 \end{center}
-\caption{The administrative page for Cloud9.\label{fig:cloud9_page_aws}}
+\caption{የክላውድ9 የአስተዳደር ገጽ።\label{fig:cloud9_page_aws}}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \image{images/figures/cloud9_name_environment.png}
 \end{center}
-\caption{Creating a new work environment at AWS Cloud9.\label{fig:cloud9_new_workspace}}
+\caption{በአ.ድ.አ ክላውድ9 ላይ አንድ አዲስ የስራ አካባብቢን መፍጠር።\label{fig:cloud9_new_workspace}}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \image{images/figures/ubuntu_server.png}
 \end{center}
-\caption{Selecting \textbf{Ubuntu Server}.\label{fig:ubuntu_server}}
+\caption{የ \textbf{Ubuntu Server} `ን መምረጥ።\label{fig:ubuntu_server}}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \image{images/figures/cloud9_ide_aws.png}
 \end{center}
-\caption{The default cloud IDE. \label{fig:cloud9_ide_aws}}
+\caption{ነባሪው የደመና ቅ.ል.አ። \label{fig:cloud9_ide_aws}}
 \end{figure}
 
-Because using two spaces for indentation is a near-universal convention in Ruby, I also recommend changing the editor to use two spaces instead of the default four. As shown in Figure~\ref{fig:cloud9_two_spaces}, you can do this by clicking the gear icon in the upper right and then changing the ``Soft Tabs'' setting to~2. (Note that this takes effect immediately; you don't need to click a ``Save'' button.)
+በሩቢ ኮድን ለመጻፍ፣ በአንድ የጽሑፍ አርታኢ ውስጥ፣ በያንዳንዱ ኮድ መሃል፣ የሁለት \emph{ክፍተቦታ (Space)} መተው፣ ከሩቢ ልማዶች ውስጥ አንዱ ስለሆነ፣ እኔም የጽሑፍ አርታኢው፣ ነባሪውን የአራት ክፍተቦታ ከመጠቀም ይልቅ፣ የሁለት ክፍተቦታን ይጠቀም ዘንድ፣ የጽሑፍ አርታኢውን እንድትቀይሩት እመክራለሁ፡፡ በምስል~\ref{fig:cloud9_two_spaces} ላይ እንደተመለከተው፣ ከገጹ ራስጌ፣ በቀኝ በኩል የተመለከተውን ጥርሳማ ክብ አዶ ላይ ጠቅ በማድረግ፣ ከዛም በ ``Soft Tabs'' ቅንብር ላይ የተመለከተውን፣ የመቀነስ ምልክት ``2'' ቁጥር ላይ እስኪደርስ ድረስ ጠቅ በማድረግ፣ የተፈለገውን ውጤት ማግኘት ትችላላችሁ፡፡ (ይህ ቅንጅት በራስሰር ተግባራዊ ስለሚሆን ``Save'' የሚለውን አዝራር ጠቅ ማድረጉ አያስፈልግም፡፡)
 
 \begin{figure}
 \begin{center}
 \image{images/figures/cloud9_two_spaces_aws.png}
 \end{center}
-\caption{Setting Cloud9 to use two spaces for indentation.\label{fig:cloud9_two_spaces}}
+\caption{ክላውድ9`ን ለግምስምስ የሁለት ክፍተቦታን እንዲጠቀም ማቀናበር።\label{fig:cloud9_two_spaces}}
 \end{figure}
 
 \begin{codelisting}
 \label{code:upgrade_git}
-\codecaption{Upgrading Git (if necessary).}
+\codecaption{ጊትን ማዘመን (አስፈላጊ ከሆነ)።}
 %= lang:console
 \begin{code}
 $ git --version
-# If the version number isn’t greater than 2.28.0, run the following command:
+# የስሪት ቁጥሩ ከ 2.28.0 ያልበለጠ ከሆነ የሚከተለውን ትእዛዝ አስኪዱ:-
 $ source <(curl -sL https://cdn.learnenough.com/upgrade_git)
 \end{code}
 \end{codelisting}
 
-Finally, this tutorial standardizes on Ruby 2.7.3, which you can install on the cloud IDE as follows:
+በመጨረሻም፣ ይህ ስልጠና የሩቢ ስሪት ቁጥር 2.7.3 `ን እንደ አንድ መስፈርት አድርጎ የሚጠቀም ስለሆነ፣ ይህንኑ መስፈርት እንደሚከተለው አድርጋችሁ በደመና ቅ.ማ.አው ላይ መጫን ትችላላችሁ:-
 
 %= lang:console
 \begin{code}
 $ rvm install 2.7.3
 \end{code}
 
-\noindent (This uses \href{https://rvm.io}{Ruby Version Manager}, which comes preinstalled on the cloud IDE.) Once that command is finished, you can verify the Ruby version as follows:
+\noindent (ይህ በደመና ቅ.ማ.አው ላይ ቀድሞ-ተጪኖ የሚመጣውን \href{https://rvm.io}{የሩቢ ስሪት አስተዳዳሪን} ይጠቀማል።) አንዴ ትእዛዙ ከጨረሰ በኋላ፣ የሩቢ ስሪቱን እንደሚከተለው አድርጋችሁ ማረጋገጥ ትችላላችሁ:-
 
 %= lang:console
 \begin{code}
@@ -140,9 +144,9 @@ $ ruby -v
 ruby 2.7.3p183 (2021-04-05 revision 6847ee089d) [x86_64-linux]
 \end{code}
 
-\noindent (Exact version numbers may differ.)
+\noindent (እንቅጩ የስሪት ቁጥር ከላይ ከምታዩት የስሪት ቁጥር ሊለይ ይችላል)
 
-At this point, you're done! Although Internet access is required to use Cloud9, there is no alternative that combines so much power with such an easy setup.
+በዚህ ጊዜ ጨርሳችኋል! ክላውድ9`ን ለመጠቀም የበይነመረብ መዳረሻ አስፈላጊ መሆኑን ልትገነዘቡ ይገባል።
 
 
 % \section{Virtual machine} % (fold)
@@ -178,50 +182,49 @@ At this point, you're done! Although Internet access is required to use Cloud9, 
 % section virtual_machine (end)
 
 
-\section{Native OS setup} % (fold)
+\section{የቤተኛ ስ.ክን ማዋቀር} % (fold)
 \label{sec:native_os_setup}
 
-As mentioned in Section~\ref{sec:dev_environment_options}, setting up your native operating system as a development environment can be challenging, but it is an important step to take once you've reached a certain level of technical sophistication. The cloud IDE option is a great place to start, but eventually you have to grab the bull by the horns (Figure~\ref{fig:grab_bull_by_horns})\footnote{Image retrieved from https://www.flickr.com/photos/mikey\_loves\_bcn/4354275361 on 2017-01-24. Copyright © 2010 by \href{https://www.flickr.com/photos/mikey_loves_bcn/}{Mikey V} and used under the terms of the \ccbync\ license.} and bend your native system to your will.
+በክፍል~\ref{sec:dev_environment_options} ላይ እንደተጠቀሰው፣ ቤተኛ ስርዓተ ክወናችሁን ለአንድ የማበልጸጊያ አካባቢ ማዋቀሩ ፈታኝ ሊሆን ይችላል፣ ነገር ግን ይሄ ውቅረት አንድ የተወሰነ የቴክኒካዊ ዘመናዊነት ደረጃ ላይ ከደረሱ በኋላ መውሰድ የሚገባው አንድ እርምጃ ነው፡፡ ካሉት አማራጮች ውስጥ የደመና ቅ.ማ.አ አማራጩ ይህንን ስራ ለመጀመር በጣም ጥሩው መንገድ ነው፣ ነገር ግን በሬውን በቀንዱ በመያዝ ቤተኛ ክወናውን እንደምትፈልጉት መግራት ይኖርባችኋል (ምስል~\ref{fig:grab_bull_by_horns})\footnote{ምስሉ በ 2017-01-24 ከ https://www.flickr.com/photos/mikey\_loves\_bcn/4354275361 የተወሰደ ነው፡፡ \href{https://www.flickr.com/photos/mikey_loves_bcn/}{በሚኪ ቪ} የ 2010 የቅጂ መብት © እና በ \ccbync\ ፈቃድ መሰረት ስእሉ ጥቅም ላይ ውሏል።}። (እዚህ ላይ በሬውን በቀንዱ ማያዝ አንድ የእንግሊዝኛ ፈሊጣዊ አነጋገር ሲሆን ትርጉሙ ደግሞ ``አስቸጋሪ ሁኔታን በቀጥታ ወይም ራስን በመተማመን መቋቋም ወይም መግጠም'' ማለት ነው።)
 
 \begin{figure}
 \begin{center}
 \image{images/figures/grab_bull_by_horns.jpg}
 \end{center}
-\caption{Sometimes you have to grab the bull by the horns.\label{fig:grab_bull_by_horns}}
+\caption{አንዳንድ ጊዜ በሬውን በቀንዱ መያዝ ይኖርባችኋል።\label{fig:grab_bull_by_horns}}
 \end{figure}
 
-Section~\ref{sec:macos} covers the conversion of macOS to a fully equipped development environment, while Section~\ref{sec:linux} does the same for Linux. We cover Microsoft Windows options in Section~\ref{sec:windows}, but (as mentioned briefly in Section~\ref{sec:dev_environment_options}) this section currently defers to the cloud IDE option in Section~\ref{sec:cloud_ide}.
+ክፍል~\ref{sec:macos} ማክስ.ክን (macOS) ወደ አንድ ሙሉ በሙሉ የታጠቀ የማበልጸጊያ አካባቢ መለወጥን የሚሸፍን ሲሆን፣ ክፍል~\ref{sec:linux} ደግሞ ለሊንክስ እንደዛው ያደርጋል፡፡ የማይክሮሶፍት ዊንዶውስ አማራጪን በክፍል~\ref{sec:windows} ላይ እንሸፍናለን፣ (በአጪሩ በክፍል~\ref{sec:dev_environment_options} ላይ እንደተጠቀሰው) ይህ ክፍል ግን በአሁኑ ወቅት በክፍል~\ref{sec:cloud_ide} ውስጥ የተጠቀሰውን የደመና ቅ.ማ.አ አማራጩን ይመለከታል፡፡
 
-
-\subsection{macOS} % (fold)
+\subsection{ማክስ.ክ (macOS)} % (fold)
 \label{sec:macos}
 
-The native Macintosh operating system, originally called Mac OS~X and now known simply as \emph{macOS}, has a polished graphical user interface (GUI) while being built on a solid Unix foundation. As a result, macOS is ideally suited for use as a programmer's development environment.
+ቤተኛው የማኪንቶሽ ስርዓተ ክወና በመጀመሪያ ማክስ ማክ ኦኤስ~ኤክስ (Mac OS~X) ተብሎ ይጠራ ነበር፣ አሁን ግን ባጪሩ ማክኦኤክስ (macOS) ተብሎ ይጠራል፤ በአንድ ጠንካራ የዩኒክስ መሰረት ላይ ቢገነባም አንድ የተስተካከለ ስእላዊ በይነገጽ (ስ.በ GUI) አለው፡፡ በዚህ ምክንያትም፣ ማክኦኤክስ (macOS) ለአንድ አበልጻጊ እንደ የማበልጸጊያ አካባቢ ሁኖ ለማገልገል እጅግ ተስማሚ ሁኗል፡፡
 
-The steps in this section constitute more than just a minimal system; you can actually get away with doing a lot less, but your three authors all use macOS themselves, and we feel that it's important not to shortchange you with a half-baked setup.
+በዚህ ክፍል ውስጥ ያሉት ሂደዶች አንድ አነስተኛ ስርዓትን ብቻ የሚመሰርቱ አይደሉም፤ በርግጥ ነው ስርዓቱን እናንተ ከዚህ ባነሰ መልኩ በመመስረት ባጪሩ ልትገላገሉ ትችላላችሁ፣ ነገር ግን ሶስቱም ደራሲዎቻችሁ ማክኦኤክስን ስለምንጠቀም እናንተን አንድ በደንብ ባልተሟላ መዋቀር መሸወዱ አስፈላጊ እንዳልሆነ ይሰማናል።
 
-\subsubsection{Terminal and editor} % (fold)
+\subsubsection{መናኸሪያ እና አርታኢ} % (fold)
 \label{sec:terminal_and_editor}
 
-Although macOS comes with a native terminal program, we recommend installing \href{https://www.iterm2.com/downloads.html}{iTerm}, which includes \href{https://www.iterm2.com/features.html}{various enhancements} that make it better than the default for developers and other technical users.
+ምንም እንኳን ማክኦኤክስ ከአንድ ቤተኛ የመናኸሪያ ፕሮግራም ጋር አብሮ የሚመጣ ቢሆንም፣ እኛ ግን \href{https://www.iterm2.com/downloads.html}{አይተርምን} እንድትጪኑ እንመክራለን፣ ይህም ለገንቢዎች እና ለሌሎች የቴክኒክ ተጠቃሚዎች ከነባሪው መናኸሪያ የተሻለ እንዲሆን የሚያደርጉ \href{https://www.iterm2.com/features.html}{የተለያዩ መሻሻሎችን} ያካተተ ነው፡፡
 
-We also recommend installing a programmer's text editor. There are lots of excellent choices, but the \href{https://atom.io/}{Atom editor} (covered in \lete) is a good place to start if you don't already have a favorite.
+እንዲሁም አንድ የአበልጻጊዎች የጽሑፍ አርታኢን እንድትጪኑ እንመክራለን። ብዙ ምርጥ የሆኑ ምርጫዎች ቢኖሩም \href{https://atom.io/}{የአተም አርታኢ} ግን ለመጀመሪያ ጥሩ ምርጫ ነው፤ ማለት ቀድሞውን የምትወዱት አንድ የጽሑፍ አርታኢ ከለላችሁ ማለት ነው (አተም \lete ላይ በደንብ ተሸፍኗል)።
 
-By the way, for the Learn Enough tutorials and the Rails Tutorial, it is generally recommended that you use the Bourne-again shell (Bash) rather than the default Z shell (although it often doesn't matter). To switch your shell to Bash, run \kode{chsh -s /bin/bash} at the command line, enter your password, and restart your terminal program. Any resulting alert messages are safe to ignore. See the Learn Enough blog post ``\href{https://news.learnenough.com/macos-bash-zshell}{Using Z Shell on Macs with the Learn Enough Tutorials}'' for more information.
+ይህ በንዲህ እያለ፣ ለበቂ ተማሩ እና ለሬይልስ ማሰልጠኛ ትምህርት፣ ነባሪውን ማለት ዚ (Z) የተባለውን ቀፎ ከመጠቀም ይልቅ ቦርን-አጌይን የተባለውን ቀፎ እንድትጠቀሙ እንመክራለን (ምንም እንኳን ብዙውን ጊዜ በሁለቱ መካከል ምንም ለውጥ ባይኖረውም)። ቀፏችሁን ወደ ባሽ ለመቀየር፣ በትእዛዝ መስመሩ ላይ \kode{chsh -s /bin/bash} `ን አስኪዱ እና ከዚያ መሕለፈቃላችሁን ካስገባችሁ በኋላ የመናኸሪያ ፕሮግራማችሁን እንደገና አስጀምሩ። ይህንን በማድረግ የምታገኟቸውን የማስጠንቀቂያ መልዕክቶች ችላ ብላችሁ ብታልፏቸው የሚያመጡት ምንም ነገር የለም። ለበለጠ መረጃ በበቂ ይማሩ ብሎግ ልጥፍ ላይ ``\href{https://news.learnenough.com/macos-bash-zshell}{በበቂ ይማሩ የስልጠና ትምህርት ላይ የዚ ቀፎን በማክ ላይ መጠቀም}'' የሚለውን ተመልከቱ፡፡
 
 % subsubsection terminal_and_editor (end)
 
 
-\subsubsection{Xcode command line tools}
+\subsubsection{የኤክስኮድ የትእዛዝ መስመር መሳሪያዎች}
 \label{sec:shiny_xcode}
 
-Although based on Unix,\footnote{Specifically, the \href{https://en.wikipedia.org/wiki/NeXT}{NeXT} system developed by the company Steve Jobs founded in 1985 after being ousted from Apple. The NeXT OS became the foundation for Mac OS X (later, macOS) after Apple acquired NeXT in 1997, which also led to Jobs' triumphant return as Apple CEO\@.} macOS doesn't ship with all the software necessary for a proper development environment. In order to fill this gap, macOS users should install \emph{Xcode}, a large suite of development tools and code libraries created by Apple.
+ምንም እንኳን ማክኦኤክስ በዩኒክስ ላይ የተመሰረተ ቢሆንም፣\footnote{\href{https://en.wikipedia.org/wiki/NeXT}{ኔክስት (NeXT)} ስቲቭ ጆብስ ከአፕል ከተባረረ በኋላ እ.ኤ.አ በ 1985 ባቋቋመው ኩባንያ የተገነባ ስርዓት ነው። ኔክስት ኩባንያን አፕል እ.ኤ.አ በ 1997 ገዝቶ ከጠቀለለው ብኋላ፣ የኔክስት ስርዓተ ክወና (OS) የማክ ስርዓተ ክወና (OS) (በኋላ ላይ ደግሞ የማክኦኤክስ ስርዓተ ክወና) መሰረት ሆነ፤ ይህም ስቲቭን የአፕል ዋና ስራ አስኪያጅ ሁኖ በድል አድራጊነት እንዲመለስ ምክንያት ሆኗል።} ለአንድ የማበልጸጊያ አከባቢ አስፈላጊ ከሆኑት ሁሉ ሶፍትዌሮች ጋር ግን ተጪኖ አይሰደድም፡፡ ይህንን ለሟሟላት፣ የማክኦኤክስ ተጠቃሚዎች በአፕል የተፈጠሩ የማበልጸጊያ መሳሪያዎች እና የኮድ ቤተኮድ ስብስብ የሆነውን \emph{ኤክስኮድን (Xcode)} መጫን ይኖርባቸዋል።
 
-Xcode used to require a 4+ GB download of installation source files, but thankfully Apple has recently made Xcode incredibly quick and easy to install with a simple command-line command, as shown in Listing~\ref{code:xcode-install}.
+ቀደም ሲል ኤክስኮድ፣ አንድ ከ 4 ጌጋባይት በላይ የሆነ የምንጪ ፋይሎችን መጫኛን ማውረድ ይፈልግ ነበረ፣ አፕል እግዚአብሄር ይስጠው በቅርብ ጊዜ ዝርዝር~\ref{code:xcode-install} ላይ እንደሚታየው በአንድ ቀላል የትእዛዝ መስመር ኤክስኮድን መጫኑን እጅግ ፈጣን እና ቀላል አድርጎታል፡፡
 
 \begin{codelisting}
 \label{code:xcode-install}
-\codecaption{Installing Xcode command line tools.}
+\codecaption{የኤክስኮድ የትእዛዝ መስመር መሳሪያወችን መጫን።}
 %= lang:console
 \begin{code}
 $ xcode-select --install
@@ -229,64 +232,62 @@ $ xcode-select --install
 \end{codelisting}
 
 
-\subsubsection{Homebrew}
+\subsubsection{ሆምብሬው}
 \label{sec:homebrew}
 
-The next step is technically optional, but in our view it is necessary for a truly professional-grade macOS dev environment: namely, installing the outstanding \emph{Homebrew} package manager.
+ቀጣዩ ሂደት በምርጫ ሊደረግ የሚችል ነው፣ ነገር ግን በእኛ አመለካከት አንድ የባለ ሙያ ደረጃ ላለው እውነተኛ የማክኦኤክስ የማበልጸጊያ አካባቢ አስፈላጊ ነው ብለን እናምናለን፣ እሱም ግሩሙን \emph{የሆምብሬው (Homebrew)} የጥቅል አስተዳዳሪን መጫን ነው።
 
-You can think of a package manager as an App Store that runs at the command line and is filled with free open-source software. Nowadays most Linux distributions come with a native package manager (Section~\ref{sec:linux}), but by default macOS doesn't have one. Homebrew is one of many managers that is available in the open-source community, but over time it has become the most popular option among serious macOS developers.
+አንድ የጥቅል አስተዳዳሪን ልክ በነጻ የክፍተ-ምንጪ ሶፍትዌር እንደተሞላ እና በትእዛዝ መስመር እንደሚካሄድ የአፕልኬሽን ማከማቻ አድርጋችሁ ማሰብ ትችላላችሁ፡፡ በአሁኑ ጊዜ አብዛኛዎቹ የሊኒክስ ስርጪቶች ከአንድ ቤተኛ የጥቅል አስተዳዳሪ (ክፍል~\ref{sec:linux}) ጋር አብረው ይመጣሉ፣ ይሁን እንጅ ማክኦኤክስ በነባሪነት ምንም የለውም፡፡ ሆምብሬው በክፍተ-ምንጪ ማህበረሰብ ውስጥ ከሚገኙ ብዙ የጥቅል አስተዳዳሪዎች መካከል አንዱ ነው፣ ከጊዜ በኋላ ግን በብዙ የማክኦኤክስ ገንቢዎች መካከል በጣም ተወዳጅነትን ያተረፈ አማራጪ ሆኗል፡፡
 
-As we'll see in Section~\ref{sec:install_ruby}, we'll be using a program called \emph{rbenv} to install Ruby, which in turn will be installed via Homebrew in Section~\ref{sec:rbenv}. But Homebrew itself requires Ruby, so it seems like we might have run into a \href{https://en.wikipedia.org/wiki/Circular_dependency}{circular dependency}. Happily, macOS ships with a \emph{system Ruby} that we can use to \href{https://en.wikipedia.org/wiki/Bootstrapping}{bootstrap} the installation. We'll use this default Ruby to install Homebrew, and then we'll install rbenv and additional Ruby versions as outlined above.
+በክፍል~\ref{sec:install_ruby} ላይ እንደምናየው፣ ሩቢን ለመጫን አንድ \emph{አርቢኤንቭ} የተባለ ፕሮግራምን እንጠቀማለን፣ እሱም በክፍል~\ref{sec:rbenv} ውስጥ በሆምብሬው በኩል ይጫናል፡፡ ይህ በንዲህ እያለ ሆምብራው ራሱ ሩቢን ይፈልጋል፣ ስለሆነም አንድ \href{https://en.wikipedia.org/wiki/Circular_dependency}{የጥገኝነት ክብ} ውስጥ የገባን ይመስላል። ደስ የሚለው ነገር ደግሞ፣ ማክኦኤክስ ጪነቱን \href{https://en.wikipedia.org/wiki/Bootstrapping}{በራሱ-የሚጀምር ሂደት} አድርገን ልንጠቀምበት ከምንችልበት አንድ \emph{የሩቢ ስርዓት} ጋር ተጪኖ መሰደዱ ነው፡፡ ሆምብሬውን ለመጫን ይህንን ነባሪ ሩቢ እንጠቀማለን፣ ከዚያ ከላይ እንደተጠቀሰው አርቢኤንቭን እና ተጨማሪ የሩቢ ስሪቶችን እንጪናለን።
 
-The Homebrew installation program is a \href{https://www.learnenough.com/text-editor-tutorial/advanced_text_editing#sec-writing_an_executable_script}{Bash script}, and can be accessed using the \kode{curl} program \href{https://www.learnenough.com/command-line-tutorial#sec-downloading_a_file}{covered} in \lecl. We can execute the Homebrew installation script using the system \kode{bash} executable, which is located in the \kode{/bin} directory. The full command appears as in Listing~\ref{code:homebrew-install}.
+የሆምብሬው መጫኛ ፕሮግራሙ አንድ \href{https://www.learnenough.com/text-editor-tutorial/advanced_text_editing#sec-writing_an_executable_script}{የባሽ ፕሮግራም}ሲሆን፣ \lecl ላይ \href{https://www.learnenough.com/command-line-tutorial#sec-downloading_a_file}{እንደተሸፈነው} \kode{curl} የተባለውን ፕሮግራም በመጠቀም ሊደረስበት ይችላል፡፡ በ \kode{/bin} ማውጫ ውስጥ የሚገኘውን፣ የ \kode{bash} ስርዓት ተፈጻሚን በመጠቀም፣ የሆምብሬው መጫኛ ፕሮግራምን ማስፈጸም እንችላለን። ሙሉው ትእዛዝ በዝርዝር~\ref{code:homebrew-install} ላይ እንደሚታየው ይሆናል።
 
 \begin{codelisting}
 \label{code:homebrew-install}
-\codecaption{Installing the Homebrew package manager.}
+\codecaption{የሆምብሬው ጥቅል አስተዳዳሪን መጫን።}
 %= lang:console
 \begin{code}
 $ /bin/bash -c "$(curl -fsSL https://www.learnenough.com/homebrew.sh)"
 \end{code}
 \end{codelisting}
 
-\noindent Note that Listing~\ref{code:homebrew-install} uses a learnenough.com forwarding URL, which points to the current Homebrew installation script. This way, if Homebrew changes the URL used to host the script, we can simply update the forwarding address, and this tutorial will continue to work as written. (You can also just copy and paste the full command from the \href{http://brew.sh/}{Homebrew home page} if you like.)
+\noindent ዝርዝር~\ref{code:homebrew-install} ወቅታዊውን የሆምብሬው መጫኛ ፕሮግራምን የሚያመላክት አንድ የ learnenough.com ማስተላለፊያ ዓ.አ.ሃ.አን (URL) እንደሚጠቀም ልታስተውሉ ይገባል። በዚህ መንገድ፣ ሆምብሬው ፕሮግራሙን ለማስተናገድ የሚያገለግለውን ዓ.አ.ሃ.አን ቢቀይረው እኛም የማስተላለፊያ አድራሻውን በቀላሉ ማዘመን እንችላለን፣ ስለሆነም ይህ የስልጠና ትምህርት ሁልጊዜ ወቅታዊነቱን እንደጠበቀ መስራቱን ይቀጥላል ማለት ነው። (ከፈለጋችሁ ደግሞ፣ \href{http://brew.sh/}{ከሆምብሬው የመነሻ ገጽ} ላይ የሚገኘውን ሙሉውን ትእዛዝ ቀድታችሁ በትእዛዝ መስመራችሁ ላይ መገልበጥ ትችላላችሁ።)
 
-Homebrew installs a \kode{brew} command-line command used for installing, updating, and removing packages. After the installation of Homebrew finishes, it's a good idea to run \kode{brew doctor}, which ensures that all of the directories and permissions needed by Homebrew to manage local files are correctly set up:
+ሆምብሬው ጥቅሎችን ለመጫን፣ ለማዘመን እና ለማስወገድ የሚያገለግል አንድ \kode{brew} የተባለ የትእዛዝ መስመርን ይጪናል። ሆምብሬው መጫኑን ከጨረሰ በኋላ፣ የሰፈር ፋይሎችን ለማስተዳደር በሆምብሬው የሚፈለጉ ሁሉም ማውጫወች እና ፈቃዶች በትክክል መዘጋጀታቸውን የሚያረጋግጠውን የ \kode{brew doctor} ትእዛዝን ማስኬዱ አንድ ጥሩ ሀሳብ ነው:-
 
 %= lang:console
 \begin{code}
 $ brew doctor
 \end{code}
 
-\noindent If you have any problems at this point, you'll need to refer to the \href{https://github.com/Homebrew/homebrew/wiki/troubleshooting}{Homebrew troubleshooting wiki}, but you really shouldn't unless you've been making changes to random system folders and permissions.
+\noindent በዚህ ጊዜ የሆነ ችግር ካጋጠማችሁ \href{https://github.com/Homebrew/homebrew/wiki/troubleshooting}{በዊኪ የሆምብሬው መላ መፈለጊያ ላይ} መጣቀስ ይኖርባችኋል፣ በእውነቱ ከሆነ ግን የስርዓት አቃፊዎችን በዘፈቀደ ካለወጣችሁ እና የፈቃድ ችግር ካላጋጠማችሁ በስተቀር ምንም አይነት ችግር ሊያጋጥማችሁ አይገባም።
 
-
-\subsubsection{Ruby Environment (rbenv)}
+\subsubsection{የሩቢ አካባቢ (rbenv)}
 \label{sec:rbenv}
 
-As we've just seen, macOS comes with Ruby preinstalled, but we don't have any control over the exact version, and macOS doesn't natively allow us to use multiple versions of Ruby in parallel. To give us more flexibility with our development environment, we'll install \emph{rbenv}, which is a utility that manages different Ruby versions and makes sure that Ruby software packages (called \emph{gems}) get placed in the right spot for Ruby to find.
+ቀደም ሲል ማክኦኤክስ ሩቢ ጋር አብሮ ተጪኖ እንደሚመጣ ተመልክተናል፣ በስሪቱ እንቅጪ ቁጥር ላይ ግን ምንም አይነት የመቆጣጠር ሃይሉ የለንም፣ ማክኦኤክስም በቤተኛነት በርካታ የሩቢ ተጓዳኝ ስሪቶችን እንድንጠቀም አያስችለንም። የማበልጸጊያ አካባቢያችንን ልባችን እንደፈቀደው እንድናደርግ ያስችለን ዘንድ፣ \emph{አርቢኤንቭን (rbenv)} እንጪናለን። ይህም የተለያዩ የሩቢ ስሪቶችን የሚያስተዳድር እና የሩቢ የሶፍትዌር ጥቅሎችን (ማለት \emph{እንቁዎች (gems)} ተብለው የሚጠሩትን) ሩቢ እንዲያገኛቸው በትክክለኛው ቦታ ላይ እንደተቀመጡ የሚያረጋግጥ አንድ መገልገያ\footnote{(መገልገያ (Utility) ዘዴ ማለት፣ መደበኛ የፕሮግራም ስራዎችን ለማከናወን ጠቃሚ የሆነ፣ በተደጋጋሚ የሚደረግ የፕሮግራም ስራን ለመፈጸም የሚያስችል፣ በድጋሜ ሊጠቀሙበት የሚችሉ ዘዴ/ፕሮግራም ማለት ነው)} ነው።
 
-Using rbenv together with the associated \emph{ruby-build} command also allows us to specify a different version of Ruby for different project repositories, which is a common task in software development.\footnote{E.g., the \href{http://docs.python-guide.org/en/latest/dev/virtualenvs/}{\emph{virtualenv}} utility accomplishes a similar task for Python projects.} For example, an older version of a program might need an older version of Ruby to run correctly. Using rbenv means we can support such an older program while still running a more up-to-date version of Ruby for our other projects.
+አርቢኤንቭን ከ \emph{ruby-build} ትእዛዝ ጋር አብሮ መጠቀሙ፣ ለተለያዩ የፕሮጀክት ማከማቻዎች አንድ የተለየ የሩቢ ስሪትን እንድንለይ ያስችለናል፤ ይህም በሶፍትዌር ብልጸጋ ላይ አንድ የተለመደ ተግባር ነው፡፡\footnote{ለምሳሌ ያየን እንደሆን \href{http://docs.python-guide.org/en/latest/dev/virtualenvs/}{\emph{ቨርቹዋልኤንቭ (virtualenv)}} የተባለው መገልገያ ፓይቶን ለተባለው የፕሮግራም ቋንቋ እንደዚሁ ለተለያዩ ፕሮጄክቶች የሚያገለግል ተመሳሳይ ስራን ያከናውናል።} ለምሳሌ፣ አንድ የቆየ የፕሮግራም ስሪትን በትክክል ለማስኬድ አንድ የቆየ የሩቢ ስሪትን ሊፈልግ ይችላል። ይህ ማለት አርቢኤንቭን በመጠቀም፣ ሌሎች ፕሮጀክቶቻችን አንድ በጣም ወቅታዊ በሆነ የሩቢ ስሪት እያስኬድን እንዲህ አይነቱን የቆየ አንድ ፕሮግራም ደግሞ በአንድ የቀድሞ የሩቢ ስሪት ማስኬድ እንችላለን ማለት ነው።
 
-Installing rbenv is easy with Homebrew. We can install both rbenv and ruby-build in one step using \kode{brew install rbenv}, as shown in Listing~\ref{code:rbenv}.
+በሆምብሬው አርቢኤንቭን መጫኑ እጅግ ቀላል ነው። በዝርዝር~\ref{code:rbenv} ላይ እንደሚታየው \kode{brew install rbenv} `ን በመጠቀም ሁለቱንም ማለት አርቢኤንቭን እና የሩቢ-ገንቢን (ruby-build) በአንድ ጊዜ መጫን እንችላለን፡፡
 
 \begin{codelisting}
 \label{code:rbenv}
-\codecaption{Installing rbenv and ruby-build.}
+\codecaption{አርቢኤንቭን እና የሩቢ-ገንቢን መጫን።}
 %= lang:console
 \begin{code}
-$ brew install rbenv    # automatically installs ruby-build as well
+$ brew install rbenv   # እንዲሁም የሩቢ-ገንቢን (ruby-build) በራስሰር ይጪናል።
 \end{code}
 \end{codelisting}
 
-After the installation from Listing~\ref{code:rbenv} finishes, we need to get rbenv up and running using \kode{rbenv init}, as shown in Listing~\ref{code:rbenv_init}.
+ዝርዝር~\ref{code:rbenv} መጫኑን ከጨረሰ በኋላ፣ በዝርዝር~\ref{code:rbenv_init} ላይ እንደሚታየው \kode{rbenv init} `ን በመጠቀም አርቢኤንቭን በስራ ላይ ማዋል ይፈለግብናል፡፡
 
-\emph{Note}: If you're using Zsh instead, substitute \kode{.zshrc} for \kode{.bash\_profile} in this section. See ``\href{https://news.learnenough.com/macos-bash-zshell}{Using Z Shell on Macs with the Learn Enough Tutorials
-}'' for more information.
+\emph{ማሳሰቢያ}:- የዚኤስኤች (Zsh) ቀፎን የምትጠቀሙ ከሆነ፣ \kode{.zshrc} `ን በ \kode{.bash\_profile} መተካት ይኖርባችኋል። የበለጠ መረጃ ለማግኛት ``\href{https://news.learnenough.com/macos-bash-zshell}{በበቂ ይማሩ የስልጠና ትምህርት ላይ የዚ ቀፎን በማክ ላይ መጠቀም}'' የሚለውን ተመልከቱ፡፡
 
 \begin{codelisting}
 \label{code:rbenv_init}
-\codecaption{Initializing rbenv.}
+\codecaption{አርቢኤንቭን መጫን።}
 %= lang:console, options: "hl_lines": [1]
 \begin{code}
 $ rbenv init
@@ -297,55 +298,59 @@ eval "$(rbenv init -)"
 \end{code}
 \end{codelisting}
 
-\noindent If Listing~\ref{code:rbenv_init} gives you an error message like ``No such file or directory.'', try exiting your shell program with Ctrl-D and restarting it, and then try the command again. (This sort of restart-and-retry technique is classic technical sophistication (Box~\ref{aside:technical_sophistication}).)
+\noindent ዝርዝር~\ref{code:rbenv_init} ``እንደዚህ አይነት ፋይል ወይም ማውጫ የለም (No such file or directory.)'' የሚል አንድ የስህተት መልእክት ከሰጣችሁ፣ Ctrl-D `ን በመጠቀም ከቀፎ ፕሮግራሙ ውጡ እና እንደገና አስጀምራችሁ ከዚያ ትእዛዙን እንደገና ሙክሩት። (ይህ ዓይነቱ እንደገና የማስጀመር እና እንደገና የመሞከሩ ዘዴ፣ የተለመደ ቴክኒካዊ ብልሃት ነው (ሳጥን~\ref{aside:technical_sophistication})።)
 
-As seen in Listing~\ref{code:rbenv_init}, running \kode{rbenv init} gives us a suggestion for how to avoid having to initialize rbenv by hand each time: we simply need to append the line
+በዝርዝር~\ref{code:rbenv_init} ላይ እንደተመለከተው፣ \kode{rbenv init} `ን ማስኬዱ፣ ሁልጊዜ አርቢኤንቭን እራሳችን ከማስጀመር ይልቅ ይህንን ትእዛዝ:-
 
 %= lang:bash
 \begin{code}
 eval "$(rbenv init -)"
 \end{code}
 
-\noindent to our Bash profile file \kode{.bash\_profile} (which is \href{https://www.learnenough.com/text-editor-tutorial#sec-saving_and_quitting_files}{covered} in \lete).
+\noindent በ \kode{.bash\_profile} ማህደር ውስጥ በማስገባት ድግግሞሽን እንዴት ማስወገድ እንደምንችል አንድ አስተያየትን ያበረክታል (ይህም \lete ላይ መደንብ \href{https://www.learnenough.com/text-editor-tutorial#sec-saving_and_quitting_files}{ተሸፍኗል}።)
 
-If you prefer, you can use a text editor to add the \kode{eval} line to your system's \kode{.bash\_profile} file, but the easiest way is to use \kode{echo} and the append operator~\kode{>{}>} \href{https://www.learnenough.com/command-line-tutorial#sec-redirecting_and_appending}{covered} in \lecl, like this:
-
-%= lang:console
-\begin{code}
-$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile    # or ~/.zshrc if using Zsh
-\end{code}
-
-\noindent Note that we've included the home directory \kode{\textasciitilde} in the path so that it works no matter which directory we're currently in.
-
-Finally, to activate the new profile file we need to \kode{source} it (as \href{https://www.learnenough.com/text-editor-tutorial#code-source_command}{mentioned} in \lete):
+ከፈለጋችሁ በናንተ የ \kode{.bash\_profile} ማህደር ውስጥ \kode{eval} የሚለውን ትእዛዝ ለማከል አንድ የጽሑፍ አርታኢን መጠቀም ትችላላችሁ፣ \lecl ላይ እንደተሸፈነው ቀላሉ መንገድ ግን \kode{echo} `ን እና የቅጥያ~\kode{>{}>} ስሌትን እንዲህ አድርጎ መጠቀም ነው:-
 
 %= lang:console
 \begin{code}
-$ source ~/.bash_profile    # or ~/.zshrc if using Zsh
+$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+# ዚኤስኤችን (Zsh) የምትጠቀሙ ከሆነ ~/.zshrc `ን ተጠቀሙ
+\end{code}
+
+\noindent እዚህ ላይ፣ በአሁኑ ወቅት በየትኛውም ማውጫ ውስጥ ብንሆንም እንኳን ትእዛዙ እንዲሰራ፣ የቤት ማውጫውን \kode{\textasciitilde} በመንገዱ ውስጥ እንዳካተትነው ልታስተውሉ ይገባል፡፡
+
+
+በመጨረሻም፣ (\lete ላይ \href{https://www.learnenough.com/text-editor-tutorial#code-source_command}{እንደተጠቀሰው}) አዲሱን የመገለጫ ማህደር ለማግበር \kode{source} የተባለውን ትእዛዝ መጠቀም ይኖርብናል:-
+
+%= lang:console
+\begin{code}
+$ source ~/.bash_profile  # ዚኤስኤችን (Zsh) የምትጠቀሙ ከሆነ ~/.zshrc `ን ተጠቀሙ
 \end{code}
 
 
-\subsubsection{New Ruby version}
+\subsubsection{አዲስ የሩቢ ስሪት}
 \label{sec:install_ruby}
 
-Now that rbenv is set up, let's give it a non-system version of Ruby to manage. The installation process is handled entirely by rbenv, so all you have to do is tell it which version you'd like on your system by passing along the exact Ruby version number.
+አሁን አርቢኤንቭ ስለተዘጋጀ፣ እስኪ አንድ ስርዓት ውስጥ ያልገባ የሩቢ ስሪትን እንዲያስተዳር እንስጠው። የመጫን ሂደቱ ሙሉ በሙሉ የሚስተናገደው በአርቢኤንቭ ነው፣ ስለሆነም ማድረግ ያለባችሁ ነገር ቢኖር  ትክክለኛውን የሩቢ የስሪት ቁጥር ከአርቢኤንቭ ትእዛዝ ጋር ጎንለጎን በመስጠት በስርዓታችሁ ላይ የትኛውን ስሪት እንደምትፈልጉ መንገር ብቻ ነው፡፡
 
-We'll use Ruby 2.7.3 in this tutorial, which as of this writing works with a wide variety of Ruby applications, but you can also use \href{https://www.ruby-lang.org/en/downloads/}{current or previous version} as listed at the Ruby website.
+በዚህ የስልጠና ትምህርት ውስጥ ሩቢ 2.7.3 `ን እንጠቀማለን፣ ይህ ጽሑፍ እስከተጻፈበት ጊዜ ድረስ የተለያዩ የሩቢ አፕልኬሽኖች ላይ በደንብ እንደሚሰራም ይታወቃል፣ ነገር ግን ከፈለጋችሁ በሩቢ ድርጣቢያ ላይ እንደተዘረዘረው \href{https://www.ruby-lang.org/en/downloads/}{ወቅታዊውን ወይም የቀድሞውን} የሩቢ ስሪት መጠቀምም ትችላላችሁ፡፡
 
-To install the desired version of Ruby using \kode{rbenv}, simply execute the command shown in Listing~\ref{code:ruby-install}. If your system ever complains that the given Ruby version isn't available, you'll have to update your system to access the latest version (Box~\ref{aside:updating_upgrading}).
+\kode{rbenv} `ን በመጠቀም የተፈለገውን የሩቢ ስሪት ለመጫን፣ በዝርዝር~\ref{code:ruby-install} ላይ የሚታየውን ትእዛዝ ብቻ ፈጽሙ፡፡ ስርዓታችሁ የተሰጠው የሩቢ ስሪት አይገኝም ብሎ ቅሬታ ካሰማ፣ ወቅታዊውን ስሪት ለመድረስ ስርዓታችሁን ማዘመን ይኖርባችኋል (ሳጥን~\ref{aside:updating_upgrading})።
 
 \begin{codelisting}
 \label{code:ruby-install}
-\codecaption{Installing a fresh copy of Ruby.}
+\codecaption{አንድ አዲስ የሩቢ ቅጂን መጫን።}
 %= lang:console
 \begin{code}
 $ rbenv install 2.7.3
 \end{code}
 \end{codelisting}
 
-\noindent After running the command in Listing~\ref{code:ruby-install}, you should see rbenv start the download process and install any dependencies that are needed for that specific version of Ruby (which might take a while depending on bandwidth and CPU limitations).
+\noindent በዝርዝር~\ref{code:ruby-install} ውስጥ ያለውን ትእዛዝ ካስኬዳችሁ በኋላ፣ አርቢኤንቭ የማውረድ ሂደቱን ሲጀምር እና ለዚያ የተወሰነ የሩቢ ስሪት የሚያስፈልጉትን ጥገኛዎች (ጥገኛ ፕሮግራሞች) ሲጪን ማየት አለባችሁ፡፡ (ይህም በመተላለፊያ ይዘቱ እና በማዕከላዊ የሂደት ክፍሉ (ማ.ሂ.ክ (CPU)) ወሰን ላይ በመመርኮዝ ትንሽ ጊዜ ሊወስድ ይችላል)።
 
-\emph{Note}: You may get an error message of the form
+
+
+\emph{ማሳሰቢያ}:- ይህን የመሰለ አንድ የስህተት መልእክት ልታገኙ ትችሉ ይሆናል:-
 
 %= lang:console
 \begin{code}
@@ -358,7 +363,7 @@ If the version you need is missing, try upgrading ruby-build:
   brew update && brew upgrade ruby-build
 \end{code}
 
-\noindent If this happens, you should clone the freshest \kode{ruby-build} list into the rbenv \kode{plugins} directory:
+\noindent ይህ ከተከሰተ እጅግ ወቅታዊውን የ \kode{ruby-build} ዝርዝርን በአርቢኤንቭ \kode{plugins} ማውጫ ውስጥ መሰል\footnote{\kode{git clone} አንድ ነባር ማከማቻ ላይ ኢላማ በማድረግ ኢላማ የተደረገበትን ማከማቻ ለመቅዳት የሚያገለግል አንድ የጊት የትእዛዝ መስመር መገልገያ ነው፡፡ ስለዚህ በጊት ውስጥ መሰል (Clone) ማድረግ ማለት ከአንድ ማከማቻ ላይ መቅዳት ማለት ነው።} (Clone) ማድረግ ይኖርባችኋል:-
 
 %= lang:console
 \begin{code}
@@ -366,7 +371,7 @@ $ mkdir ~/.rbenv/plugins
 $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 \end{code}
 
-\noindent If \kode{ruby-build} is already there, you can simply \kode{pull} in the latest changes:
+\noindent \kode{ruby-build} ቀድሞውኑ እዛው ላይ ካለ፣ ወቅታዊ ለውጦቹን በቀላሉ ለማውረድ የጊት \kode{pull} ትእዛዝን እንደሚከተለው አድርጋችሁ መጠቀም ትችላላችሁ:-
 
 %= lang:console
 \begin{code}
@@ -375,9 +380,9 @@ $ cd ~/.rbenv/plugins && git pull && cd -
 
 \begin{aside}
 \label{aside:updating_upgrading}
-\heading{Updating and upgrading}
+\heading{ማዘመን እና ማሻሻል}
 
-Although we just installed fresh versions of all relevant software, after a while your local system will get out of sync with the latest versions of Homebrew and any installed packages. In order to update the system, every once in a while it's a good idea to update Homebrew itself and then upgrade the installed packages as follows:
+ምንም እንኳን አሁን ሁሉንም ማለት ተገቢ የሆነ ግንኙነት ያላቸውን የሶፍትዌሮች ወቅታዊ ስሪቶችን ብጪንም፣ ከጥቂት ጊዜ በኋላ ግን የሰፈራችሁ ስርዓት ከአዳዲስ የሆምብሬው ስሪቶች እና ከማንኛውም የተጫኑ ጥቅሎች ጋር አይመሳሰሉም፡፡ ስርዓቱን ለማዘመን፣ አንዳንድ ጊዜ ሆምብሬውን እራሱን ማዘመን እና ከዚያ የተጫኑትን ጥቅሎችንም ማሻሻሉ አንድ ጥሩ ሀሳብ ነው:-
 
 \begin{verbatim}
   $ brew update
@@ -386,29 +391,29 @@ Although we just installed fresh versions of all relevant software, after a whil
 
 \end{aside}
 
-After the Ruby installation finishes, we need to tell the system that there's a new version of Ruby using the obscurely named \kode{rehash} command:
+ሩቢን መጫኑ ከተጠናቀቀ በኋላ፣ ግልጽ ባልሆነ ስም የተሰየመውን የ \kode{rehash} ትእዛዝን በመጠቀም አንድ አዲስ የሩቢ ስሪት እንዳለ ለስርዓቱ መንገር ይኖርብናል:-
 
 %= lang:console
 \begin{code}
 $ rbenv rehash
 \end{code}
 
-For this guide, we are also going to set the Ruby version from Listing~\ref{code:ruby-install} as the global default so that you won't have to worry about specifying the Ruby version when you start your project. The way to do this is with the \kode{global} command:
+ለዚህ መመሪያ፣ ፕሮጀክታችሁን በምትጀምሩበት ጊዜ የሩቢ ስሪትን ለይታችሁ ለመጥቀስ እንዳትጨነቁ፣ የዝርዝር~\ref{code:ruby-install} የሩቢ ስሪቱን በተጨማሪ አንድ የዓለም አቀፍ ነባሪ ስሪት እንዲሆን እናደርጋዋለን (እዚህ ላይ አንድ ስሪትን ዓለም አቀፍ ማድረግ ማለት በዚህ ስርዓት ውስጥ የሚፈጠሩ አፕልኬሽኖች በሙሉ አንድ ዓለም አቀፍነት የተሰጠውን ስሪት ይጠቀማሉ ማለት ነው፤ በዚህ ወቅት ደግሞ የሩቢ የስሪት ቁጥር 2.7.3 `ን ይሆናል ማለት ነው)፡፡ ይህንን ለማድረግ መንገዱም የ \kode{global} ትእዛዝን መጠቀም ነው:-
 
 %= lang:console
 \begin{code}
 $ rbenv global 2.7.3
 \end{code}
 
-\noindent At this point, it's probably a good idea to restart your shell program to make sure all the settings are properly updated.
+\noindent በዚህ ጊዜ ሁሉም ቅንጅቶች በትክክል እንደተዘመኑ ለማረጋገጥ፣ የቀፎ ፕሮግራሙን እንደገና ማስጀመሩ አንድ ጥሩ ሀሳብ ሊሆን ይችላል፡፡
 
-For future work, you may want to use specific versions of Ruby on a per-project basis, which can be done by creating a file called \kode{.ruby-version} in the project's root directory and including the version of Ruby to be used. (If it isn't already present on your system, you'll also have to install it using \kode{rbenv install <version number>} as in Listing~\ref{code:ruby-install}.) See the \href{https://github.com/rbenv/rbenv}{rbenv documentation} for more information.
+ለወደፊቱ ስራ፣ በአንድ ፕሮጀክት መሰረት ላይ የተወሰነ የሩቢ ስሪትን መጠቀም ትፈልጉ ይሆናል፣ ይህም በፕሮጀክቱ ስረ ማውጫ ላይ አንድ \kode{.ruby-version} የተባለ ፋይልን በመፍጠር እና ጥቅም ላይ እንዲወል የተፈለገውን የሩቢ ስሪትን በማካተት ሊከናወን ይችላል። (በስርዓታችሁ ላይ አሁን ከሌለ፣ በዝርዝር~\ref{code:ruby-install} ላይ እንደተመለከተው \kode{rbenv install <የስሪት ቁጥር>} `ን በመጠቀም መጫን ይኖርባችኋል።) የበለጠ መረጃ ለማግኘት \href{https://github.com/rbenv/rbenv}{የአርቢኤንቭ ሰነድን} ተመልከቱ።
 
-Finally, when installing Ruby software via \emph{gems}, or self-contained packages of Ruby code, it's often convenient to skip the installation of the local documentation, which can take more time to install than the software itself, and in any case is more conveniently accessed online. Preventing documentation installation can be done on a case-by-case basis, but it's more convenient to make it a global default by creating a file in the home directory called \kode{.gemrc} with instructions to skip the rarely used (and time-consuming to install) Ruby documentation files, as shown in Listing~\ref{code:gemrc}.
+በመጨረሻም፣ የሩቢ ሶፍትዌርን \emph{በእንቁዎች (gems)} ወይም እራሱን-በያዘ የሩቢ ኮድ ጥቅል በኩል በምትጪኑበት ጊዜ፣ ሶፍትዌሩን ከመጫን ይልቅ የሰፈር ሰነዱን ለመጫን ብዙ ጊዜ ሊወስድ ስለሚችል፣ ብዙውን ጊዜ እሱን ላለመጫን መዝለሉ የተመረጠ ነው፣ በተፈለገ ጊዜ ደግሞ ሰነዱን በመስመር ላይ መድረሱ እጅግ አመች ነው። ሰነድ መጫንን መከላከሉ፣ እንደየሁኔታው ሊከናወን ይችላል፣ ነገር ግን በዝርዝር~\ref{code:gemrc} ላይ እንደሚታየው፣ እምብዛም ጥቅም ላይ የማይውሉትን (እና ለመጫን ጊዜ የሚወስዱትን) የሩቢ የሰነድ ፋይሎች ለመዝለል በቤት ማውጫው ውስጥ አንድ \kode{.gemrc} ተብሎ የሚጠራ ፋይልን በመፍጠር እሱን አንድ ዓለም አቀፍ ነባሪ ማድረጉ የበለጠ አመች ይሆናል።
 
 \begin{codelisting}
 \label{code:gemrc}
-\codecaption{Configuring the \kode{.gemrc} file to skip the installation of Ruby documentation.}
+\codecaption{የሩቢ የሰነዶች ጪነትን ለመዝለል \kode{.gemrc} ማህደርን ማዋቀር።}
 %= lang:console
 \begin{code}
 $ echo "gem: --no-document" >> ~/.gemrc
@@ -416,86 +421,85 @@ $ echo "gem: --no-document" >> ~/.gemrc
 \end{codelisting}
 
 
-\noindent With that configuration, any uses of \kode{gem install <gem name>} to install Ruby gems will automatically be svelte, streamlined, and documentation-free.
+\noindent በዚህ ውቅር የሩቢ እንቁዎችን ለመጫን፣ ማንኛውም \kode{gem install <የእንቁ ስም>} `ን መጠቀሙ፣ በራስሰር ስልክክ ያለ፣ ቀልጣፋ እና ከሰነድ ነጻ እንዲሆን ያደርገዋል፡፡
 
-\subsubsection{Git} % (fold)
+\subsubsection{ጊት} % (fold)
 \label{sec:git}
 
-A recent version of the Git version control system should come automatically with the Xcode command-line tools installed in Section~\ref{sec:shiny_xcode}, which you can verify using the \kode{which} command:
+ወቅታዊው የጊት የስሪት ቁጥጥር ስርዓት ክፍል~\ref{sec:shiny_xcode} ላይ ከተጫኑት የኤክስኮድ የትእዛዝ መስመር መሳሪያዎች ጋር በራስሰር መምጣት ይኖርበታል፣ ይህንንም የ \kode{which} ትእዛዝን በመጠቀም ማረጋገጥ ትችላላችሁ:-
 
 %= lang:console
 \begin{code}
 $ which git
 \end{code}
 
-\noindent If the result of this is blank, it means Git isn't installed, and you can install it with Homebrew:
+\noindent የዚህ ውጤት ባዶ ከሆነ፣ ጊት አልተጫነም ማለት ነው፣ እናም ሆምብሬውን በመጠቀም እሱን መጫን ትችላላችሁ:-
 
 %= lang:console
 \begin{code}
 $ brew install git
 \end{code}
 
-Either way, you should check to make sure that the Git version number is least \kode{2.28.0}:
+ያም ሆነ ይህ፣ የጊት የስሪት ቁጥር ቢያንስ ቢያንስ \kode{2.28.0} መሆኑን ማረጋገጥ ይኖርባችኋል:-
 
 %= lang:console
 \begin{code}
 $ git --version
-git version 2.31.1    # should be at least 2.28.0
+git version 2.31.1    # የስሪት ቁጥሩ ቢያንስ ቢያንስ 2.28.0 መሆን አለበት።
 \end{code}
 
-\noindent If the version number isn't recent enough, you should run \kode{brew update} and then run \kode{brew upgrade git}.
+\noindent የስሪት ቁጥሩ ወቅታዊ ካልሆነ፣ መጀመሪያ \kode{brew update} `ን ከዚያ ደግሞ \kode{brew upgrade git} `ን ማስኬድ ይኖርባችኋል።
 
 % subsubsection git (end)
 
 % subsection macos (end)
 
-\subsection{Linux} % (fold)
+\subsection{ሊኒክስ} % (fold)
 \label{sec:linux}
 
-Because of Linux's highly technical origins, Linux systems typically come well-equipped with developer tools. As a result, setting up a native Linux OS as a dev environment is especially simple.
+በሊኒክስ እጅግ ቴክኒካዊ የዘር አመጣጥ ምክንያት፣ የሊኒክስ ስርዓቶች በተለምዶ በአፕልኬሽኖች መገንቢያ መሳሪያዎች በሚገባ የተሰነቁ ናቸው። በዚህ ምክንያት፣ አንድ ቤተኛ የሊኒክስ ስርዓተ ክወናን ለአንድ የማበልጸጊያ አካባቢ ለማዘጋጀት በሚገባ ቀላል ነው፡፡
 
-Every major Linux distribution ships with a terminal program, a text editor, and Git. There are only four major steps we recommend in addition to the defaults:
+እያንዳንዱ ዋና የሊኒክስ ስርጪት ከአንድ የመናኸሪያ ፕሮግራም፣ ከአንድ የጽሁፍ አርታኢ እና ከጊት ጋር ተጪኖ ይሰደዳል፡፡ ከነባሪዎቹ በተጨማሪ የምንመክራቸው ነገሮች ቢኖሩ ግን እነዚህ አራት ዋና ሂደቶች ብቻ ይሆናሉ:-
 \begin{enumerate}
-  \item \href{https://atom.io/}{Download and install Atom} if you don't already have a favorite editor.
-  \item Follow the \href{https://github.com/rbenv/rbenv#installation}{rbenv installation instructions} from the rbenv website.
-  \item Install and configure Ruby as shown in Listing~\ref{code:ruby-install} and Listing~\ref{code:gemrc}.
-  \item Make sure that the Git version number is at least \kode{2.28.0}.
+  \item ቀድሞውኑ የምትወዱት አንድ የጽሑፍ አርታኢ ከለላችሁ፣ \href{https://atom.io/}{አተምን አውርዱ እና ጫኑ}።
+  \item የአርቢኤንቭ \href{https://github.com/rbenv/rbenv#installation}{የጪነት መመሪያዎችን} ከአርቢኤንቭ የድርጣቢያ ተከተሉ።
+  \item በዝርዝር~\ref{code:ruby-install} እና በዝርዝር~\ref{code:gemrc} ላይ እንደታየው ሩቢን ጫኑ እና አዋቅሩ።
+  \item የጊት የስሪት ቁጥር ቢያንስ ቢያንስ \kode{2.28.0} መሆኑን አረጋግጡ።
 \end{enumerate}
 
-The final step can be accomplished by running
+ከላይ ካሉት ውስጥ የመጨረሻው ሂደት የሚከተለውን ትእዛዝ በማስኬድ ሊከናወን ይችላል:-
 
 %= lang:console
 \begin{code}
 $ git --version
 \end{code}
 
-\noindent If the output isn't at least \kode{2.28.0}, go to ``\href{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{Getting Started – Installing Git}'' and install the latest version for your system.
+\noindent የስሪቱ ውጽአት ቢያንስ ቢያንስ \kode{2.28.0} ካልሆነ፣ ወደ  ``\href{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{ጊትን ለመጫን መጀመር}'' አምሩ እና ወቅታዊውን የጊት ስሪት ለስርዓታችሁ ጫኑ።
 
-At this point, you should be good to go!
+በዚህ ጊዜ፣ ሁሉንም ነገር በትክክል አሟልታችሁ ወደሚቀጥለው ጉዞ ለማለፍ መብቃት አለባችሁ!
 
 % subsection linux (end)
 
-\subsection{Windows} % (fold)
+\subsection{ዊንዶውስ} % (fold)
 \label{sec:windows}
 
-Finally, we have native instructions for Microsoft Windows---or, rather instructions for using Unix on Windows. As discussed in Section~\ref{sec:cloud_ide}, one possibility is to use a cloud IDE, but we've had reports of especially good results with installing Linux directly in Windows.
+በመጨረሻም፣ ለማይክሮሶፍት ዊንዶውስ አንድ የቤተኛ መመሪያ ይኖረናል፣ ወይም በትክክለኛው አነጋገር በዊንዶውስ ላይ ዩኒክስን የሚጠቀሙ መመሪያወች አሉን ማለት ይቻላል። በክፍል~\ref{sec:cloud_ide} ላይ እንደተብራራው፣ አንዱ አማራጪ አንድ የደመና ቅ.ማ.አን መጠቀም ነው፣ በተለይ በዊንዶውስ ላይ ሊኒክስን በቀጥታ መጫኑ ግን መልካም ውጤት እንዳለው አንዳንድ ዘገባወች ደርሰውናል፡፡
 
-That's right! Believe it or not, Windows \href{https://devblogs.microsoft.com/commandline/announcing-wsl-2/}{now ships} with a working Linux \href{https://en.wikipedia.org/wiki/Kernel_(operating_system)}{kernel}, and you can install any of a number of Linux distributions by following \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{Microsoft's own instructions}. (To those of us who remember the Linux-hating, predatory Microsoft of the late '90s/early 2000s, the idea that Windows would someday ship with native Linux support is truly incredible---\href{https://youtu.be/JmzuRXLzqKk}{\emph{dogs and cats, living together!}}---and yet \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{here we are}.)
+ትክክል ነው! እመኑም አትምኑም፣ አሁን ዊንዶውስ ከአንድ ከሚሰራ የሊኒክስ \href{https://en.wikipedia.org/wiki/Kernel_(operating_system)}{ከርኔል (kernel)} ጋር \href{https://devblogs.microsoft.com/commandline/announcing-wsl-2/}{ተጪኖ ይሰደዳል}፣ እና \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{የራሱን የማይክሮሶፍትን መመሪያዎች} በመከተል ማንኛውንም የሊኒክስ ስርጪቶችን መጫን ትችላላችሁ፡፡ (በ 90 ዎቹ መጨረሻ እና በ 2000 ዎቹ መጀመሪያ ላይ የሊኒክስ የማይክሮሶፍት ጥላቻን እና የማይክሮሶፍት ስግብግብነትን/ቀማኝነትን ለምናስታውስ፣ ዊንዶውስ አንድ ቀን አንድ ቤተኛ ሊኒክስን ከመገደፍ ጋር ተጪኖ ይሰደዳል ብሎ ማሰቡ በእውነቱ ጪራሽ የማይታሰብ ነገር ነበረ፣ \href{https://docs.microsoft.com/en-us/windows/wsl/install-win10}{አሁን ግን ለዚህ በቃን} (\href{https://youtu.be/JmzuRXLzqKk}{\emph{ውሻ እና ድመት አብረው ይኖራሉ ይሏችኋል ይሄ ነው!}})፡፡)
 
-To get everything working, our recommendation is to follow the tutorial article ``\href{https://www.hanselman.com/blog/RubyOnRailsOnWindowsIsNotJustPossibleItsFabulousUsingWSL2AndVSCode.aspx}{Ruby on Rails on Windows is not just possible, it's fabulous using WSL2 and VS Code}'' by \href{https://www.hanselman.com/}{Scott Hanselman}. Although especially useful for Ruby on Rails web development, Hanselman's tutorial is of quite general applicability, and following it should result in a fantastic general development experience on Windows.
-
+ሁሉም ነገር እንዲሰራ ለማድረግ፣ ምክራችን \href{https://www.hanselman.com/}{በስካት ሀንሰልማን} የቀረበውን ``\href{https://www.hanselman.com/blog/RubyOnRailsOnWindowsIsNotJustPossibleItsFabulousUsingWSL-8AndVSCode.aspx}{ሩቢ ኦን ሬይልስን በዊንዶውስ መገንባት የሚቻል ብቻ ሳይሆን፣ ደብሊውኤስኤል2`ን (WSL2) እና ቪኤስ ኮድን (VS Code) በመጠቀም መገንባቱ እጅግ ድንቅ ነው}'' የሚለውን ትምህርታዊ መጣጥፍን እንድትከተሉ ነው። ምንም እንኳን ለሩቢ ኦን ሬይልስ የድር ማበልጸጊያ ጠቃሚ ቢሆንም፣ የሀንሰልማን የስልጠና ትምህርት ግን በአጠቃላይ ብዙ ዘርፎች ላይ የሚያገለግል ነው፣ እና የስልጠና ትምህርቱን መከታተሉ አንድ ድንቅ የዊንዶውስ ስርዓት ማበልጸጊያ አጠቃላይ ተሞክሮን ሊያስገኝ ይገባል፡፡
 
 % subsection windows (end)
 
 % section native_os_setup (end)
 
-\section{Conclusion} % (fold)
+\section{ማጠቃለያ} % (fold)
 \label{sec:conclusion}
 
-If you've made it this far---and especially if you completed a native OS setup in Section~\ref{sec:native_os_setup}---you've now learned enough dev environment to be \emph{dangerous}. You're ready to move on to complete challenging tutorials like \lecss, \ler, and the \rort. Good luck!
+እስከዚህ ድረስ ከደረሳችሁ (እና በተለይ ደግሞ በክፍል~\ref{sec:native_os_setup} ላይ ያለውን አንድ የቤተኛ ስርዓተ ክወና ማዋቀርን ካጠናቀቃችሁ) አሁን ``በማበልጸጊያ አካባቢ \emph{አደገኛ ለመሆን} በቂ ይማሩ'' `ን ተምራችኋል ማለት ነው። አሁን እንደ \lecss\/፣ \ler እና እንደ \rort ያሉ ፈታኝ የስልጠና ትምህርቶችን ለመፋለም እና በድል ለማጠናቀቅ ዝግጁዎች ናችሁ፤ መልካም ዕድል!
 
 % section conclusion (end)
 
 \bigskip
 
-\noindent {\small \ledev. Copyright © 2017 by Michael Hartl, Lee Donahoe, and Nick Merwin.}
+\noindent {\small \ledev ። የቅጂ መብቱ © እ.ኤ.አ በ 2017 በማይክል ሃርትል፣ በሊዶናሆ እና በኒክ ሜርዊን ተሰጥቷል።}
